@@ -145,7 +145,7 @@ app.layout = html.Div(
                                            'font-weight': 'bold'},),
 
                             html.H2(children='Double-click on a category isolate. Zoom in or out to see more details. Press play to see the yearly evolution',
-                                    style={'textAlign': 'center', 'color': 'teal', 'font-family': 'Calibri', 'font-weight': 'natural','font-size': '11px'},
+                                    style={'textAlign': 'center', 'color': 'teal', 'font-family': 'Calibri', 'font-weight': 'natural','font-size': '13px'},
 
                                     ), ],
                             className='card_header'
@@ -179,7 +179,7 @@ app.layout = html.Div(
                            html.H2(
                                children='Mouseover on the lines to see the values',
                                style={'textAlign': 'center', 'color': 'teal', 'font-family': 'Calibri',
-                                      'font-weight': 'natural', 'font-size': '12px'},
+                                      'font-weight': 'natural', 'font-size': '13px'},
 
                                ),
                             ],
@@ -210,7 +210,7 @@ app.layout = html.Div(
                                 html.H2(
                                     children='Press play to see the evolution in the score',
                                     style={'textAlign': 'center', 'color': 'teal', 'font-family': 'Calibri',
-                                           'font-weight': 'natural', 'font-size': '12px'},
+                                           'font-weight': 'natural', 'font-size': '13px'},
                                 ),
 
                             ],
@@ -295,7 +295,7 @@ app.layout = html.Div(
                                     ),
 
                             html.H2(children='Select the country on the filter and choose a year to analyze. Mouseover on the bars to see the values.',
-                                                                style={'textAlign': 'center', 'color': 'teal', 'font-family': 'Calibri', 'font-weight': 'natural','font-size': '12px'},
+                                                                style={'textAlign': 'center', 'color': 'teal', 'font-family': 'Calibri', 'font-weight': 'natural','font-size': '13px'},
 
                                     ),],
                             className='card_header',
