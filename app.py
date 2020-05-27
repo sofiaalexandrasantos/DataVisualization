@@ -33,13 +33,13 @@ fig1.update_layout(
         showcoastlines=False,
         showocean=True,
         oceancolor='#f9f9f9',
-        projection_type='equirectangular'),width=1000,height=800,
+        projection_type='equirectangular'),
     plot_bgcolor='white',
     paper_bgcolor='rgba(0,0,0,0)',
     showlegend=True,
-    font=dict( size=22),
+    font=dict( size=15),
     legend_orientation="h",
-    legend_y= .05
+    legend_y= .01
 )
 
 
@@ -59,7 +59,7 @@ fig2.update_layout(
     plot_bgcolor='rgba(0, 0, 0, 0)',
     paper_bgcolor='rgba(0,0,0,0)',
     font=dict(
-        size=19),
+        size=12),
 )
 
 
@@ -85,7 +85,7 @@ fig4.update_layout({
     'plot_bgcolor': 'rgba(0, 0, 0, 0)',
     'paper_bgcolor': 'rgba(0, 0, 0, 0)', }, xaxis_title='Region',
     yaxis_title='Score', font=dict(
-        size=19))
+        size=12))
 
 # Interactive Components ---------------------------------------------------------
 
@@ -123,7 +123,7 @@ app.layout = html.Div(
                                  ' At the bottom, the interactive bar chart allows us to check the indications per country and year so you can do a lot of combinations.',
 
                         className='card-title',
-                        style={'textAlign': 'left', 'font-size': '22px', 'color': 'teal', 'font-family': 'Calibri', 'font-weight': 'normal'}
+                        style={'textAlign': 'left', 'font-size': '15px', 'color': 'teal', 'font-family': 'Calibri', 'font-weight': 'normal'}
                         ),
             ],
             className='box'
@@ -145,7 +145,7 @@ app.layout = html.Div(
                                            'font-weight': 'bold'},),
 
                             html.H2(children='Double-click on a category isolate. Zoom in or out to see more details. Press play to see the yearly evolution',
-                                    style={'textAlign': 'center', 'color': 'teal', 'font-family': 'Calibri', 'font-weight': 'natural','font-size': '20px'},
+                                    style={'textAlign': 'center', 'color': 'teal', 'font-family': 'Calibri', 'font-weight': 'natural','font-size': '11px'},
 
                                     ), ],
                             className='card_header'
@@ -157,7 +157,7 @@ app.layout = html.Div(
                             children='Double-click on a legend item to isolate the category. Zoom in or Zoom out to see more details. ',
                             id='Happiness Scores',
                             figure=fig1,
-                            style={'margin': '5px 5px', 'Align': 'right'}
+                            style={'margin': '10px 10px', 'Align': 'right'}
                         )
                     ],
                     style={'width': '45%', 'height': '20%', 'margin': '10px 10px'},
@@ -179,7 +179,7 @@ app.layout = html.Div(
                            html.H2(
                                children='Mouseover on the lines to see the values',
                                style={'textAlign': 'center', 'color': 'teal', 'font-family': 'Calibri',
-                                      'font-weight': 'natural', 'font-size': '20px'},
+                                      'font-weight': 'natural', 'font-size': '12px'},
 
                                ),
                             ],
@@ -210,7 +210,7 @@ app.layout = html.Div(
                                 html.H2(
                                     children='Press play to see the evolution in the score',
                                     style={'textAlign': 'center', 'color': 'teal', 'font-family': 'Calibri',
-                                           'font-weight': 'natural', 'font-size': '20px'},
+                                           'font-weight': 'natural', 'font-size': '12px'},
                                 ),
 
                             ],
@@ -249,7 +249,7 @@ app.layout = html.Div(
                                     options=country_options,
                                     multi=True,
                                     value=['Portugal', 'United Kingdom'],
-                                    style={'font-size': '26px', 'font-family': 'Calibri', 'font-weight': 'normal'}
+                                    style={'font-size': '15px', 'font-family': 'Calibri', 'font-weight': 'normal'}
                                 )
                             ],
                             style={'margin': '5px 10px', 'width': '70%'},
@@ -273,7 +273,7 @@ app.layout = html.Div(
                                              dict(label='2018', value=2018),
                                              dict(label='2019', value=2019)],
                                     value=2015,
-                                    labelStyle={'display': 'block', 'font-size': '26px', 'font-family': 'Calibri'},
+                                    labelStyle={'display': 'block', 'font-size': '15px', 'font-family': 'Calibri'},
                                     style={'textAlign': 'center'},
                                 )
                             ],
@@ -295,7 +295,7 @@ app.layout = html.Div(
                                     ),
 
                             html.H2(children='Select the country on the filter and choose a year to analyze. Mouseover on the bars to see the values.',
-                                                                style={'textAlign': 'center', 'color': 'teal', 'font-family': 'Calibri', 'font-weight': 'natural','font-size': '20px'},
+                                                                style={'textAlign': 'center', 'color': 'teal', 'font-family': 'Calibri', 'font-weight': 'natural','font-size': '12px'},
 
                                     ),],
                             className='card_header',
@@ -318,7 +318,7 @@ app.layout = html.Div(
                                             [
                                                 html.H4(children='Data Source: World Happiness Report on: https://worldhappiness.report/archive/',
                                                         className='card-title',
-                                                        style={'textAlign': 'right', 'font-size': '20px', 'color': 'teal', 'font-family': 'Calibri', 'font-weight': 'normal'}
+                                                        style={'textAlign': 'right', 'font-size': '12px', 'color': 'teal', 'font-family': 'Calibri', 'font-weight': 'normal'}
                                                         ),
                                             ],
                                             className='box'
@@ -327,7 +327,7 @@ app.layout = html.Div(
                             [
                                 html.H4(children='Made by: Sofia Santos, Fabiola Mousinho, Ana Beatriz, Ana Catarina',
                                         className='card-title',
-                                        style={'textAlign': 'left', 'font-size': '20px', 'color': 'teal', 'font-family': 'Calibri', 'font-weight': 'normal'}
+                                        style={'textAlign': 'left', 'font-size': '12px', 'color': 'teal', 'font-family': 'Calibri', 'font-weight': 'normal'}
                                         ),
                             ],
                             className='box'
@@ -444,7 +444,7 @@ def update_graph(countries, year):
                           bargroupgap=0.1,  # gap between bars of the same location coordinate.
                           font=dict(
                               family='sans-serif',
-                              size=22,
+                              size=12,
                               color='#000'
                           ),
                           hovermode="y unified"
@@ -455,10 +455,10 @@ def update_graph(countries, year):
     fig3.update_layout(
         plot_bgcolor='rgba(0, 0, 0, 0)',
         paper_bgcolor='rgba(0,0,0,0)',
-        uniformtext_minsize=22,
+        uniformtext_minsize=12,
         font=dict(
             family='sans-serif',
-            size=22,
+            size=12,
             color='#000')
     )
 
