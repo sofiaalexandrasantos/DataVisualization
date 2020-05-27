@@ -104,6 +104,8 @@ dropdown_country = dcc.Dropdown(
 
 app = dash.Dash(__name__)
 
+server = app.server
+
 app.layout = html.Div(
     [
         html.Div(
@@ -420,6 +422,7 @@ def update_graph(countries, year):
                               size=22,
                               color='#000'
                           ),
+                          hovermode="x unified"
                           )
 
     fig3 = go.Figure(data=data, layout=scatter_layout)
