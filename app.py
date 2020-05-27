@@ -37,7 +37,9 @@ fig1.update_layout(
     plot_bgcolor='white',
     paper_bgcolor='rgba(0,0,0,0)',
     showlegend=True,
-    font=dict( size=22)
+    font=dict( size=22),
+    legend_orientation="h",
+    legend_y= .05
 )
 
 
@@ -57,8 +59,9 @@ fig2.update_layout(
     plot_bgcolor='rgba(0, 0, 0, 0)',
     paper_bgcolor='rgba(0,0,0,0)',
     font=dict(
-        size=19)
+        size=19),
 )
+
 
 # Third Plot with default values -----------------------------------------
 filtered_by_year_df = df1[df1['Year'] == 2015]
@@ -72,15 +75,15 @@ filtered_by_year_and_country_df = filtered_by_year_df[filtered_by_year_df['Count
 
 # Forth PLOT ---------------------------------------------------------------------
 
-A = df1[['Year', 'Continent', 'Happiness score']]
-fig4 = px.histogram(A, x="Continent", y='Happiness score', histfunc='avg', animation_frame="Year",
+A = df1[['Year', 'Region', 'Happiness score']]
+fig4 = px.histogram(A, x="Region", y='Happiness score', histfunc='avg', animation_frame="Year",
                     color_discrete_sequence=['#02818a'])
 
 
 
 fig4.update_layout({
     'plot_bgcolor': 'rgba(0, 0, 0, 0)',
-    'paper_bgcolor': 'rgba(0, 0, 0, 0)', }, xaxis_title='Continent',
+    'paper_bgcolor': 'rgba(0, 0, 0, 0)', }, xaxis_title='Region',
     yaxis_title='Score', font=dict(
         size=19))
 
@@ -113,19 +116,14 @@ app.layout = html.Div(
         ),
         html.Div(
             [
-                html.H4(children='This dashboard presents an overview of the happiness score worldwide.'
-                                 ''
-                                 '  Happiness is described by the status of 6 indicators: GDP per capita, Social support, Healthy life expectancy, freedom to make life choices, Generosity, and Perception of the corruption.'
-                                 ''
-                                 '  This story starts with a map look, where it is possible to see the evolution of the happiness score ranges across years, developed countries are the  happier ones and in development the less happier - with a clear exception of South America countries. '
-                                 ''
-                                 '  Then, the line chart shows the total world score per year, where is visible a decrease in the last year. '
-                                 ''
-                                 '  In terms of regions, the bar chart on the right shows that Oceania is the happier region in all years.'
-                                 '        '
-                                 '  Last, the interactive bar chart on the bottom allows us to check the indicators per country and year so you can do a lot of combinations. More than one country can be selected.',
+                html.H4(children='This dashboard presents an overview of the happiness score worldwide. Happiness is described by the status of 6 indicators: GDP per capita, Social support, Healthy life expectancy, Freedom to make life choices, Generosity, and Perception of corruption.' 
+                                 ' This story starts with a map representation, where it is possible to see the evolution of the happiness score ranges across years. Developed countries are the happiest ones and in developing countries the less happy – with a clear exception of South America. '
+                                 ' Then, the line chart shows the total world score per year, where it is visible a decrease in the last year. '
+                                 ' In terms of regions, the bar chart on the right shows that Oceania is the happier region in all years. '
+                                 ' At the bottom, the interactive bar chart allows us to check the indications per country and year so you can do a lot of combinations.',
+
                         className='card-title',
-                        style={'textAlign': 'left', 'font-size': '30px', 'color': 'teal', 'font-family': 'Calibri', 'font-weight': 'normal'}
+                        style={'textAlign': 'left', 'font-size': '22px', 'color': 'teal', 'font-family': 'Calibri', 'font-weight': 'normal'}
                         ),
             ],
             className='box'
@@ -135,47 +133,67 @@ app.layout = html.Div(
         html.Div(
             [
                 # Left Sub container
+
                 html.Div(
                     [
                         html.Div(
                             # Figure Title
+                            [
                             html.H2(children='Happiness Score per country and year',
                                     className='card-title',
-                                    style={'textAlign': 'center','color': 'dimgray','font-family': 'Calibri', 'font-weight': 'bold'},
-                                    ),
-                            className='card_header',
+                                    style={'textAlign': 'center', 'color': 'dimgray', 'font-family': 'Calibri',
+                                           'font-weight': 'bold'},),
+
+                            html.H2(children='Double-click on a category isolate. Zoom in or out to see more details. Press play to see the yearly evolution',
+                                    style={'textAlign': 'center', 'color': 'teal', 'font-family': 'Calibri', 'font-weight': 'natural','font-size': '20px'},
+
+                                    ), ],
+                            className='card_header'
                         ),
 
                         # Figure Image
+
                         dcc.Graph(
+                            children='Double-click on a legend item to isolate the category. Zoom in or Zoom out to see more details. ',
                             id='Happiness Scores',
                             figure=fig1,
                             style={'margin': '5px 5px', 'Align': 'right'}
                         )
                     ],
-                    style={'width': '45%', 'margin': '10px 10px'},
+                    style={'width': '45%', 'height': '20%', 'margin': '10px 10px'},
                     className='new_box'
                 ),
+
 
                 # Middle Sub container
                 html.Div(
                     [
                         html.Div(
-                            # Figure Title
-                            html.H2(children='World Happiness Score',
+
+                           [
+                                # Figure Title
+                           html.H2(children='World Happiness Score',
                                     className='card-title',
                                     style={'textAlign': 'center','color': 'dimgray','font-family': 'Calibri', 'font-weight': 'bold'}
                                     ),
-                            className='card_header',
-                        ),
+                           html.H2(
+                               children='Mouseover on the lines to see the values',
+                               style={'textAlign': 'center', 'color': 'teal', 'font-family': 'Calibri',
+                                      'font-weight': 'natural', 'font-size': '20px'},
 
+                               ),
+                            ],
+                            className='card_header',
+
+                        ),
                         dcc.Graph(
                             id='World Happiness Scores',
                             figure=fig2,
-                            style={'margin': '20px 20px'}
+                            style={'margin': '10px 10px'}
                         )
+
                     ],
-                    style={'width': '25%', 'margin': '10px 10px'},
+                    style={'width': '25%', 'height': '10%', 'margin': '10px 10px'},
                     className='new_box'
                 ),
 
@@ -183,11 +201,19 @@ app.layout = html.Div(
                 html.Div(
                     [
                         html.Div(
+                            [
                             # Figure Title
                             html.H2(children='Average Happiness Score By Region',
                                     className='card-title',
                                     style={'textAlign': 'center','color': 'dimgray','font-family': 'Calibri', 'font-weight': 'bold'}
                                     ),
+                                html.H2(
+                                    children='Press play to see the evolution in the score',
+                                    style={'textAlign': 'center', 'color': 'teal', 'font-family': 'Calibri',
+                                           'font-weight': 'natural', 'font-size': '20px'},
+                                ),
+
+                            ],
                             className='card_header',
                         ),
 
@@ -197,7 +223,7 @@ app.layout = html.Div(
                             style={'margin': '10px 10px'}
                         )
                     ],
-                    style={'width': '30%', 'margin': '10px 10px'},
+                    style={'width': '30%', 'margin': '10px 10px','height': '10%'},
                     className='new_box'
                 ),
             ],
@@ -263,10 +289,15 @@ app.layout = html.Div(
                 html.Div(
                     [
                         html.Div(
-                            html.H2(children='Happiness Indicators per Country and Year',
+                            [ html.H2(children='Happiness Indicators per Country and Year',
                                     className='card-title',
                                     style={'textAlign': 'center','color': 'dimgray','font-family': 'Calibri','font-weight':'bold'}
                                     ),
+
+                            html.H2(children='Select the country on the filter and choose a year to analyze. Mouseover on the bars to see the values.',
+                                                                style={'textAlign': 'center', 'color': 'teal', 'font-family': 'Calibri', 'font-weight': 'natural','font-size': '20px'},
+
+                                    ),],
                             className='card_header',
                         ),
 
@@ -416,7 +447,7 @@ def update_graph(countries, year):
                               size=22,
                               color='#000'
                           ),
-                          hovermode="x unified"
+                          hovermode="y unified"
                           )
 
     fig3 = go.Figure(data=data, layout=scatter_layout)
