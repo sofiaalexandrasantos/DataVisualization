@@ -110,10 +110,9 @@ app.layout = html.Div(
             [
                 html.H1(children='HAPPINESS WORLDWIDE 2015-2019',
                         className='card-title',
-                        style={'textAlign': 'center','color': 'teal'}
+                        style={'textAlign': 'center','color': 'white', 'background-color': 'teal'}
                         ),
             ],
-            className='box'
         ),
         html.Div(
             [
