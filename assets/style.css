@@ -36,7 +36,7 @@ border-radius: 5px;
 }
 
 .card_header {
-    padding: .75rem 1.25rem;
+    padding: .50rem 1.10rem;
     margin-bottom: 0;
     background-color: rgba(0,0,0,.03);
     border-bottom: 1px solid rgba(0,0,0,.125);
@@ -54,7 +54,7 @@ border-radius: 5px;
 h2 {
   text-align: center;
   font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0,0,0,0), font-size: '20px';
 }
 
 h4, h5, h6 {

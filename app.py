@@ -56,6 +56,7 @@ fig2.update_layout(
         tickmode='array',
         tickvals=[2015, 2016, 2017, 2018, 2019],
         ticktext=[2015, 2016, 2017, 2018, 2019]),
+    yaxis=dict(range=[800,840]),
     plot_bgcolor='rgba(0, 0, 0, 0)',
     paper_bgcolor='rgba(0,0,0,0)',
     font=dict(
@@ -145,7 +146,7 @@ app.layout = html.Div(
                                            'font-weight': 'bold'},),
 
                             html.H2(children='Double-click on a category isolate. Zoom in or out to see more details. Press play to see the yearly evolution',
-                                    style={'textAlign': 'center', 'color': 'teal', 'font-family': 'Calibri', 'font-weight': 'natural','font-size': '13px'},
+                                    style={'textAlign': 'center', 'color': 'teal', 'font-family': 'Calibri', 'font-weight': 'natural','font-size': '15px'},
 
                                     ), ],
                             className='card_header'
@@ -160,7 +161,7 @@ app.layout = html.Div(
                             style={'margin': '10px 10px', 'Align': 'right'}
                         )
                     ],
-                    style={'width': '45%', 'height': '20%', 'margin': '10px 10px'},
+                    style={'width': '50%', 'height': '20%', 'margin': '10px 10px'},
                     className='new_box'
                 ),
 
@@ -177,9 +178,9 @@ app.layout = html.Div(
                                     style={'textAlign': 'center','color': 'dimgray','font-family': 'Calibri', 'font-weight': 'bold'}
                                     ),
                            html.H2(
-                               children='Mouseover on the lines to see the values',
+                               children='Mouseover the line to see the values',
                                style={'textAlign': 'center', 'color': 'teal', 'font-family': 'Calibri',
-                                      'font-weight': 'natural', 'font-size': '13px'},
+                                      'font-weight': 'natural', 'font-size': '15px'},
 
                                ),
                             ],
@@ -203,14 +204,14 @@ app.layout = html.Div(
                         html.Div(
                             [
                             # Figure Title
-                            html.H2(children='Average Happiness Score By Region',
+                            html.H2(children='Average Score By Region',
                                     className='card-title',
                                     style={'textAlign': 'center','color': 'dimgray','font-family': 'Calibri', 'font-weight': 'bold'}
                                     ),
                                 html.H2(
                                     children='Press play to see the evolution in the score',
                                     style={'textAlign': 'center', 'color': 'teal', 'font-family': 'Calibri',
-                                           'font-weight': 'natural', 'font-size': '13px'},
+                                           'font-weight': 'natural', 'font-size': '15px'},
                                 ),
 
                             ],
@@ -218,12 +219,12 @@ app.layout = html.Div(
                         ),
 
                         dcc.Graph(
-                            id='Average Happiness Score By Region',
+                            id='Average Score By Region',
                             figure=fig4,
                             style={'margin': '10px 10px'}
                         )
                     ],
-                    style={'width': '30%', 'margin': '10px 10px','height': '10%'},
+                    style={'width': '25%', 'margin': '10px 10px','height': '10%'},
                     className='new_box'
                 ),
             ],
@@ -294,8 +295,8 @@ app.layout = html.Div(
                                     style={'textAlign': 'center','color': 'dimgray','font-family': 'Calibri','font-weight':'bold'}
                                     ),
 
-                            html.H2(children='Select the country on the filter and choose a year to analyze. Mouseover on the bars to see the values.',
-                                                                style={'textAlign': 'center', 'color': 'teal', 'font-family': 'Calibri', 'font-weight': 'natural','font-size': '13px'},
+                            html.H2(children='Select a country and year to analyze. Mouseover the bars to see the values',
+                                                                style={'textAlign': 'center', 'color': 'teal', 'font-family': 'Calibri', 'font-weight': 'natural','font-size': '15px'},
 
                                     ),],
                             className='card_header',
